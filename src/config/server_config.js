@@ -5,4 +5,6 @@ console.log('running')
 
 module.exports= {
 PORT: process.env.PORT,
+FLIGHT_SERVICE: process.env.FLIGHT_SERVICE,
+
 }

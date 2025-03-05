@@ -1,7 +1,7 @@
 const {StatusCodes} =require('http-status-codes')
 
 const Apperror = require('../utils/errors/app-error');
-const logger = require('../utils/loggers'); // Adjust the path if needed
+// const logger = require('../utils/'); // Adjust the path if needed
 
 
 class crudRepository{
