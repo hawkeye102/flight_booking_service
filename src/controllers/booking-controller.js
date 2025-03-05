@@ -23,7 +23,28 @@ async function createBooking(req,res) {
     
 }
 
+async function makePayment(req,res) {
+   
+    try {
+        console.log('Received request to update seats:', req.body);
+        const response= await BookingService.makePayment({
+            totalCost:req.body. totalCost,
+            userId:req.body.userId,
+            bookingId : req.body.bookingId
+           
+        });
+        successResponse.data=response;
+        return res.status(StatusCodes.OK).json( successResponse);
+    } catch (error) {
+        return res.status(error.statusCode || StatusCodes.INTERNAL_SERVER_ERROR).json({
+            error: error.message || "Internal Server Error"
+        });    
+    }
+    
+}
+
 
 module.exports ={
-    createBooking
+    createBooking,
+    makePayment
 }
